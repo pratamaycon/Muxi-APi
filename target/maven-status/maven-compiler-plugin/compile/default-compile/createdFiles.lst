@@ -1,4 +1,0 @@
-com\pratamaycon\muxi\MuxiApplicationApplication.class
-com\pratamaycon\muxi\domain\model\Terminal.class
-com\pratamaycon\muxi\domain\repository\TerminalRepository.class
-com\pratamaycon\muxi\api\controller\TerminalController.class
