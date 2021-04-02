@@ -15,19 +15,19 @@ import com.pratamaycon.muxi.domain.model.Terminal;
 import com.pratamaycon.muxi.domain.repository.TerminalRepository;
 
 @RestController
-@RequestMapping("/terminais")
+@RequestMapping("/api/v1")
 public class TerminalController {
     
     @Autowired
     private TerminalRepository repository;
     
-    @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(value = {"/terminal"}, produces = {MediaType.APPLICATION_JSON_VALUE})
     @ResponseStatus(HttpStatus.OK)
     public List<Terminal> buscarTodos() {
         return repository.findAll();
     }
     
-    @GetMapping(value = {"/{logic}"})
+    @GetMapping(value = {"/terminal/{logic}"})
     @ResponseStatus(HttpStatus.OK)
     public Terminal buscarPeloId(@PathVariable("logic") Integer logic) {
         return repository.findByLogic(logic);

@@ -1,6 +1,4 @@
-com\pratamaycon\muxi\repository\StudentRepository.class
-com\pratamaycon\muxi\SpringBootAndSqLiteApplication.class
-com\pratamaycon\muxi\service\StudentService.class
-com\pratamaycon\muxi\dialect\SQLiteDialect.class
-com\pratamaycon\muxi\entity\Student.class
-com\pratamaycon\muxi\controller\StudentController.class
+com\pratamaycon\muxi\MuxiApplicationApplication.class
+com\pratamaycon\muxi\domain\model\Terminal.class
+com\pratamaycon\muxi\domain\repository\TerminalRepository.class
+com\pratamaycon\muxi\api\controller\TerminalController.class

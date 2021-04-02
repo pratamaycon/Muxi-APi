@@ -1,6 +1,4 @@
-C:\Users\Maycon.Conceicao\Documents\projetos\workspace\muxi-api\src\main\java\com\pratamaycon\muxi\SpringBootAndSqLiteApplication.java
-C:\Users\Maycon.Conceicao\Documents\projetos\workspace\muxi-api\src\main\java\com\pratamaycon\muxi\dialect\SQLiteDialect.java
-C:\Users\Maycon.Conceicao\Documents\projetos\workspace\muxi-api\src\main\java\com\pratamaycon\muxi\repository\StudentRepository.java
-C:\Users\Maycon.Conceicao\Documents\projetos\workspace\muxi-api\src\main\java\com\pratamaycon\muxi\service\StudentService.java
-C:\Users\Maycon.Conceicao\Documents\projetos\workspace\muxi-api\src\main\java\com\pratamaycon\muxi\controller\StudentController.java
-C:\Users\Maycon.Conceicao\Documents\projetos\workspace\muxi-api\src\main\java\com\pratamaycon\muxi\entity\Student.java
+C:\Users\Maycon.Conceicao\Documents\projetos\workspace\muxi-api\src\main\java\com\pratamaycon\muxi\MuxiApplicationApplication.java
+C:\Users\Maycon.Conceicao\Documents\projetos\workspace\muxi-api\src\main\java\com\pratamaycon\muxi\domain\repository\TerminalRepository.java
+C:\Users\Maycon.Conceicao\Documents\projetos\workspace\muxi-api\src\main\java\com\pratamaycon\muxi\api\controller\TerminalController.java
+C:\Users\Maycon.Conceicao\Documents\projetos\workspace\muxi-api\src\main\java\com\pratamaycon\muxi\domain\model\Terminal.java
