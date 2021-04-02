@@ -1,0 +1,6 @@
+com\pratamaycon\muxi\repository\StudentRepository.class
+com\pratamaycon\muxi\SpringBootAndSqLiteApplication.class
+com\pratamaycon\muxi\service\StudentService.class
+com\pratamaycon\muxi\dialect\SQLiteDialect.class
+com\pratamaycon\muxi\entity\Student.class
+com\pratamaycon\muxi\controller\StudentController.class
