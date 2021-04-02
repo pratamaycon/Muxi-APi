@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MuxiApplicationApplication {
+public class MuxiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MuxiApplicationApplication.class, args);
+		SpringApplication.run(MuxiApplication.class, args);
 	}
 
 }

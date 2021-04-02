@@ -1,10 +1,10 @@
-package com.pxp.SQLite.demo;
+package com.pratamaycon.muxi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootAndSqLiteApplicationTests {
+class MuxiApplicationTests {
 
 	@Test
 	void contextLoads() {
