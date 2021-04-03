@@ -82,8 +82,10 @@ Obs: Na Raiz do Projeto, há uma pasta com uma coleção exportada do postman du
 
 ## TESTES AUTOMIZADOS
 
-- Executar os testes Unitários
-`mvn test dentro do diretório do projeto`
+### TESTES UNITÁRIOS 
+
+- Executar os testes Unitários (dentro do diretório do projeto)
+`mvn test` 
 ```java
 	...
 
@@ -103,6 +105,7 @@ Obs: Na Raiz do Projeto, há uma pasta com uma coleção exportada do postman du
 	...
 ```
 
+### TESTES DE INTEGRAÇÃO
 
 - Executar o teste de integração
 ```java
@@ -127,6 +130,3 @@ Obs: Na Raiz do Projeto, há uma pasta com uma coleção exportada do postman du
   }
 
 ```
-
-
-
