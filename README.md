@@ -43,6 +43,19 @@ Algumas técnologias como servidor de aplicação tomcat (embarcado), gerenciado
 - MAVEN
 - Client POSTMAN ou similiares para testar os endpoints
 
+## CONFIGURAÇÕES DATABASE
+Configurações SQLlite
+em application.properties:
+```
+spring.jpa.database-platform=com.pratamaycon.muxi.dialect.SQLiteDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:sqlite:memory:myDb?cache=shared
+spring.datasource.driver-class-name=org.sqlite.JDBC
+spring.datasource.username=pxp
+spring.datasource.password=password
+spring.jpa.show-sql=true
+```
+
 ## USO
 
 **GET**
@@ -65,13 +78,30 @@ URL do endpoint que atualiza um terminal:
 
 `http://localhost:8080/api/v1/terminal/46332211`
 
+Obs: Na Raiz do Projeto, há uma pasta com uma coleção exportada do postman durante desevolvimento da API.
+
 ## TESTES AUTOMIZADOS
 
 - Executar os testes Unitários
 `mvn test dentro do diretório do projeto`
+```java
+    @Test
+	public void deveEncontrarUmTerminalPorLogic() {
+    		//cenario
+    		Integer logic = 46332211;
+    	
+		//acao
+		Optional<Terminal> terminalOp = repository.findByLogic(logic);
+		Terminal terminal = terminalOp.get();
+
+		//verificao
+		assertNotNull(terminal);
+	}
+```
+
 
 - Executar o teste de integração
-```
+```java
   @SpringBootTest
   @ExtendWith( SpringExtension.class )
   @ActiveProfiles("test")
