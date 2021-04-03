@@ -7,30 +7,43 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pratamaycon.muxi.domain.model.Terminal;
 import com.pratamaycon.muxi.domain.repository.TerminalRepository;
+import com.pratamaycon.muxi.domain.service.TerminalService;
+import com.sun.istack.NotNull;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/")
 public class TerminalController {
     
     @Autowired
     private TerminalRepository repository;
     
-    @GetMapping(value = {"/terminal"}, produces = {MediaType.APPLICATION_JSON_VALUE})
+    @Autowired
+    private TerminalService service;
+    
+    @GetMapping(value = {"v1/terminal"}, produces = {MediaType.APPLICATION_JSON_VALUE})
     @ResponseStatus(HttpStatus.OK)
     public List<Terminal> buscarTodos() {
         return repository.findAll();
     }
     
-    @GetMapping(value = {"/terminal/{logic}"})
+    @GetMapping(value = {"v1/terminal/{logic}"}, produces = {MediaType.APPLICATION_JSON_VALUE})
     @ResponseStatus(HttpStatus.OK)
     public Terminal buscarPeloId(@PathVariable("logic") Integer logic) {
         return repository.findByLogic(logic);
+    }
+    
+    @PostMapping(value = {"v1/terminal"}, consumes = {"text/html; charset=utf-8"}, produces = {MediaType.APPLICATION_JSON_VALUE})
+    @ResponseStatus(HttpStatus.CREATED)
+    public String criarTerminal(@RequestBody @NotNull String body) {
+		return service.salvar(body);
     }
     
 }
