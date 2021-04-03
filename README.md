@@ -110,8 +110,7 @@ Obs: Na Raiz do Projeto, há uma pasta com uma coleção exportada do postman du
   @ExtendWith( SpringExtension.class )
   @ActiveProfiles("test")
   public class TerminalIT {
- 
-    ... 
+  
     	    ...
     
     	    @Test
