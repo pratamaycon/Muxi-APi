@@ -2,6 +2,8 @@ package com.pratamaycon.muxi.domain.repository;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import java.util.Optional;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +24,11 @@ public class TerminalRepositoryTest {
     @Test
 	public void deveEncontrarUmTerminalPorLogic() {
     	//cenario
-    	Integer logic = 44332211;
+    	Integer logic = 46332211;
     	
 		//acao
-		Terminal terminal = repository.findByLogic(logic);
+		Optional<Terminal> terminalOp = repository.findByLogic(logic);
+		Terminal terminal = terminalOp.get();
 
 		//verificao
 		assertNotNull(terminal);

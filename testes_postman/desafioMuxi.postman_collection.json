@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "d0bf8605-0947-486e-80dc-7eefdc77fb77",
+		"name": "desafioMuxi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "buscar todos terminais",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/terminal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"terminal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pegar terminal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/terminal/46332211",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"terminal",
+						"46332211"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "criar terminal",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "46332211;123;KGWIN;0;F04A2E4088B;4;8.00b3;0;16777216;PWWIN;",
+					"options": {
+						"raw": {
+							"language": "html"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/terminal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"terminal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atualizar terminal",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"logic\": 44332222,\r\n    \"serial\": \"123456\",\r\n    \"model\": \"PWWIN\",\r\n    \"sam\": 0,\r\n    \"ptid\": \"F04A2E4088B\",\r\n    \"plat\": 4,\r\n    \"version\": \"8.00b3\",\r\n    \"mxr\": 0,\r\n    \"mxf\": 16777216,\r\n    \"verfm\": \"KKKK\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/terminal/46332211",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"terminal",
+						"46332211"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

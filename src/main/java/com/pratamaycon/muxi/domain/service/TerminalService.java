@@ -1,6 +1,9 @@
 package com.pratamaycon.muxi.domain.service;
 
+import java.util.Optional;
+
 import org.json.JSONObject;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -48,6 +51,44 @@ public class TerminalService {
 		} catch (JsonProcessingException e) {
 			return new ErrorMensagem(SchemaValidation.PAYLOAD_INVALIDO, e.getMessage()).toString();
 		}
+	}
+	
+    /**
+     * Atualiza um terminal já existente 
+     *
+     * @param terminal
+     * @param logic
+     * @return retorna uma String em json com a entidade ou erro.
+     */
+	public String atualizar(Terminal terminal, Integer logic) {
+		SchemaValidation schemaValidation = new SchemaValidation();
+		Optional<Terminal> terminalOp = repository.findByLogic(logic);
+
+        if (terminalOp.isEmpty()) {
+            return new ErrorMensagem(SchemaValidation.ENTIDADE_NAO_ENCONTRADA).toString();
+        }
+        
+        Terminal terminalAtualizado = terminalOp.get();
+        
+        if (terminalAtualizado.getLogic() != logic) {
+            return new ErrorMensagem(SchemaValidation.ENTIDADE_NAO_ENCONTRADA).toString();
+        } else {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
+            try {
+            	BeanUtils.copyProperties(terminal, terminalAtualizado, "logic");
+                JSONObject jsonObject = new JSONObject(objectMapper.writeValueAsString(terminalAtualizado));
+                JSONObject schema = new JSONObject(SchemaValidation.JSON_SCHEMA);
+                if (schemaValidation.validateJsonSchema(schema, jsonObject)) {
+                    repository.save(terminalAtualizado);
+                    return jsonObject.toString();
+                } else {
+                    return new ErrorMensagem(SchemaValidation.JSON_SCHEMA_INVALIDO).toString();
+                }
+            } catch (JsonProcessingException e) {
+                return new ErrorMensagem(SchemaValidation.PAYLOAD_INVALIDO).toString();
+            }
+        }
 	}
 	
 	/**

@@ -80,6 +80,20 @@ public class TerminalIT {
 			.statusCode(HttpStatus.SC_CREATED);
 	}
 	
+	@Test
+	public void deveRetornarStatus200_QuandoAtualizarTerminal() {
+		given()
+			.log().all()
+			.pathParam("logic", terminal.getLogic())
+			.body(terminal)
+			.contentType(ContentType.JSON)
+		.when()
+			.log().all()
+			.put("/v1/terminal/{logic}")
+		.then()
+			.statusCode(HttpStatus.SC_OK);
+	}
+	
 	
 	
 	private Terminal createTerminal() {
@@ -90,7 +104,7 @@ public class TerminalIT {
     			.sam(0)
     			.ptid("F04A2E4088B")
     			.plat(4)
-    			.verfm("8.00b3")
+    			.version("8.00b3")	
     			.mxr(0)
     			.mxf(16777216)
     			.verfm("PWWIN")

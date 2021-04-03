@@ -40,6 +40,7 @@ public class SchemaValidation {
     public static final String ERRO_DESCONHECIDO = "Erro desconhecido";
     public static final String PAYLOAD_INVALIDO = "Payload inválido, o formato pode estar errado";
     public static final String JSON_SCHEMA_INVALIDO = "Seu payload não corresponde ao schema json.";
+    
 
     // JSON-SCHEMA
     public static final String JSON_SCHEMA = "{\n" +
