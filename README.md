@@ -21,6 +21,7 @@ O Desafio backend é uma das etapas do processo seletivo da muxi. O objetivo des
 - RestAssured
 - JUNIT 5
 - POSTMAN
+- IDE ECLIPSE
 
 ## JUSTIFICATIVA DAS TECNLOGIAS UTILIZADAS
 
@@ -31,7 +32,16 @@ Após ler atentamente os requisitos do desafio, optei por escolher a tecnologia 
 A metologia de design de api adotada foi o DDD que tem como foco o que está acontecendo no domínio da aplicação. Em outras palavras, e como o nome sugere, o design é centrado na lógica de negócios (domínio) do software. Como foi dito no domain temos: Modelo de Dominio, Serviços de dominio e Repositório de Dados. Esse três elementos são essenciais no que podemos dizer a respeito do domínio da aplicação. Além disso, ainda temos os endpoints que ficam em pacote a parte do domnínio da aplicação sendo denominado como api. </p>
 
 <p align="justify">
+Outra estratégia utilizada durante o desenvolvimento da API foi o TDD, seguindo a idéia de primeiro construir os testes antes de implementar a solução de produção. </p>
+
+<p align="justify">
 Algumas técnologias como servidor de aplicação tomcat (embarcado), gerenciador de pacotes MAVEN e o client para fazer as requisições http POSTMAN foram utilizados no desenvolvimento dessa API. </p>
+
+## PRÉ REQUISITOS PARA RODAR ESSE PROJETO
+
+- JAVA 11
+- MAVEN
+- Client POSTMAN ou similiares para testar os endpoints
 
 ## USO
 
@@ -43,12 +53,45 @@ URL do endpoint que retorna uma lista de terminais:
 **GET**
 URL do endpoint que retorna um terminal /{logic}:
 
-`http://localhost:8080/api/v1/terminal/44332211`
+`http://localhost:8080/api/v1/terminal/46332211`
 
 **POST**
 URL do endpoint que cria um terminal:
 
 `http://localhost:8080/api/v1/terminal`
+
+**PUT**
+URL do endpoint que atualiza um terminal:
+
+`http://localhost:8080/api/v1/terminal/46332211`
+
+## TESTES AUTOMIZADOS
+
+- Executar os testes Unitários
+`mvn test dentro do diretório do projeto`
+
+- Executar o teste de integração
+```
+  @SpringBootTest
+  @ExtendWith( SpringExtension.class )
+  @ActiveProfiles("test")
+  public class TerminalIT {
+ 
+    ... 
+    
+    	@Test
+	    public void deveRetornarStatus200_QuandoConsultarTerminal() {
+		      given() 
+			      .accept(ContentType.JSON)
+		      .when()
+			      .get("/v1/terminal")
+		      .then()
+			      .statusCode(HttpStatus.SC_OK);
+	    }
+ 
+  }
+
+```
 
 
 
