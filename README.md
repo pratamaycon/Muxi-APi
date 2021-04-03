@@ -85,7 +85,9 @@ Obs: Na Raiz do Projeto, há uma pasta com uma coleção exportada do postman du
 - Executar os testes Unitários
 `mvn test dentro do diretório do projeto`
 ```java
-    @Test
+	...
+
+    	@Test
 	public void deveEncontrarUmTerminalPorLogic() {
     		//cenario
     		Integer logic = 46332211;
@@ -97,6 +99,8 @@ Obs: Na Raiz do Projeto, há uma pasta com uma coleção exportada do postman du
 		//verificao
 		assertNotNull(terminal);
 	}
+	
+	...
 ```
 
 
@@ -108,8 +112,9 @@ Obs: Na Raiz do Projeto, há uma pasta com uma coleção exportada do postman du
   public class TerminalIT {
  
     ... 
+    	    ...
     
-    	@Test
+    	    @Test
 	    public void deveRetornarStatus200_QuandoConsultarTerminal() {
 		      given() 
 			      .accept(ContentType.JSON)
@@ -119,6 +124,7 @@ Obs: Na Raiz do Projeto, há uma pasta com uma coleção exportada do postman du
 			      .statusCode(HttpStatus.SC_OK);
 	    }
  
+ 	    ...
   }
 
 ```
