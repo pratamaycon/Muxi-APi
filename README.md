@@ -107,7 +107,10 @@ Obs: Na Raiz do Projeto, há uma pasta com uma coleção exportada do postman du
 
 ### TESTES DE INTEGRAÇÃO
 
-- Executar o teste de integração
+- Executar o teste de integração 
+
+Obs: Para que os testes funcionem corretamente a aplicação precisa estar rodando.
+
 ```java
   @SpringBootTest
   @ExtendWith( SpringExtension.class )
