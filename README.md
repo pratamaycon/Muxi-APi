@@ -96,6 +96,12 @@ Obs: Na Raiz do Projeto, há uma pasta com uma coleção exportada do postman du
 
 ## TESTES AUTOMIZADOS
 
+É possível rodar todos os testes, incluindo os de integração. Simplesmente apertando 
+
+`JUnit test`
+
+na sua Ide de preferência.
+
 ### TESTES UNITÁRIOS 
 
 - Executar os testes Unitários (dentro do diretório do projeto)
@@ -126,6 +132,8 @@ Obs: Na Raiz do Projeto, há uma pasta com uma coleção exportada do postman du
 - Executar o teste de integração 
 
 Obs: Para que os testes funcionem corretamente a aplicação precisa estar rodando.
+
+Obs: Testes de Intgeração necessitam de dados não quebrarem.
 
 ```java
   @SpringBootTest
