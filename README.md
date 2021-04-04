@@ -6,7 +6,7 @@
 ## Descrição
 
 <p align="justify">
-O Desafio backend é uma das etapas do processo seletivo da muxi. O objetivo desse desafio é a construção de uma Api Rest com algumas operações de GRUD, tais como: busca, cadastro e atualização em uma entidade denonimada `terminal`. </p>
+O Desafio backend é uma das etapas do processo seletivo da muxi. O objetivo desse desafio é a construção de uma Api Rest com algumas operações de GRUD, tais como: busca, cadastro e atualização em uma entidade denonimada <i style="itatic">terminal</i>. </p>
 
 ## TÉCNOLOGIAS ESCOLHIDAS
 
@@ -29,7 +29,7 @@ O Desafio backend é uma das etapas do processo seletivo da muxi. O objetivo des
 Após ler atentamente os requisitos do desafio, optei por escolher a tecnologia a qual eu possuia mais experiência o JAVA versão 11. Além disso, para facilitar o desenvolvimento dos endpoints REST foi escolhido o framework web Spring Boot versão 2.4.0 juntamente com banco de dados SQLlite IN MEMORY que consta como dica no documento do desafio. </p>
 
 <p align="justify">
-A metologia de design de api adotada foi o DDD que tem como foco o que está acontecendo no domínio da aplicação. Em outras palavras, e como o nome sugere, o design é centrado na lógica de negócios (domínio) do software. Como foi dito no domain temos: Modelo de Dominio, Serviços de dominio e Repositório de Dados. Esse três elementos são essenciais no que podemos dizer a respeito do domínio da aplicação. Além disso, ainda temos os endpoints que ficam em pacote a parte do domnínio da aplicação sendo denominado como api. </p>
+A metologia de design de api adotada foi o DDD que tem como foco o que está acontecendo no domínio da aplicação. Em outras palavras, e como o nome sugere, o design é centrado na lógica de negócios (domínio) do software. Como foi dito no domain temos: Modelo de Dominio, Serviços de dominio e Repositório de Dados. Esse três elementos são essenciais no que podemos dizer a respeito do domínio da aplicação. Além disso, ainda temos os <i style="itatic">resources</i> que ficam em um pacote a parte do domnínio da aplicação sendo denominado como <i style="itatic">api</i>. </p>
 
 <p align="justify">
 Outra estratégia utilizada durante o desenvolvimento da API foi o TDD, seguindo a idéia de primeiro construir os testes antes de implementar a solução de produção. </p>
@@ -56,7 +56,21 @@ spring.datasource.password=password
 spring.jpa.show-sql=true
 ```
 
-## USO
+## INSTRUÇÕES DE USO
+
+### COMANDO DE EXECUÇÃO
+
+Necessário rodar o comando (dentro do diretório do projeto)
+
+`mvn clean install`
+
+<p align="justify">
+Obs: Não foi possível manter a API em nuvem pois serviços como heroku, por exemplo, não suportam banco em memória como SQLlite. No caso Herouku ele exclui o armazenamento local, não permitindo que as informações sejam persistidas localmente. 
+</p>
+
+[Link para o github com uma explicação](https://stackoverflow.com/questions/27663075/download-sqlite-database-from-heroku)
+
+### URLS DOS ENDPOINTS
 
 **GET**
 URL do endpoint que retorna uma lista de terminais:
@@ -82,10 +96,18 @@ Obs: Na Raiz do Projeto, há uma pasta com uma coleção exportada do postman du
 
 ## TESTES AUTOMIZADOS
 
+É possível rodar todos os testes, incluindo os de integração. Simplesmente apertando 
+
+`JUnit test`
+
+na sua Ide de preferência.
+
 ### TESTES UNITÁRIOS 
 
 - Executar os testes Unitários (dentro do diretório do projeto)
+
 `mvn test` 
+
 ```java
 	...
 
@@ -110,6 +132,8 @@ Obs: Na Raiz do Projeto, há uma pasta com uma coleção exportada do postman du
 - Executar o teste de integração 
 
 Obs: Para que os testes funcionem corretamente a aplicação precisa estar rodando.
+
+Obs: Testes de Intgeração necessitam de dados para não quebrarem.
 
 ```java
   @SpringBootTest
