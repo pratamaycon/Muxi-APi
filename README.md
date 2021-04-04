@@ -56,7 +56,21 @@ spring.datasource.password=password
 spring.jpa.show-sql=true
 ```
 
-## USO
+## INSTRUÇÕES DE USO
+
+### COMANDO DE EXECUÇÃO
+
+Necessário rodar o comando (dentro do diretório do projeto)
+
+`mvn clean install`
+
+<p align="justify">
+Obs: Não foi possível manter a API em nuvem pois serviços como heroku, por exemplo, não suportam banco em memória como SQLlite. Eles excluim armazenamento local, não permitindo que as informações sejam persistidas localmente. 
+</p>
+
+[Link para o github com uma explicação](https://stackoverflow.com/questions/27663075/download-sqlite-database-from-heroku)
+
+### URLS DOS ENDPOINTS
 
 **GET**
 URL do endpoint que retorna uma lista de terminais:
@@ -85,7 +99,9 @@ Obs: Na Raiz do Projeto, há uma pasta com uma coleção exportada do postman du
 ### TESTES UNITÁRIOS 
 
 - Executar os testes Unitários (dentro do diretório do projeto)
+
 `mvn test` 
+
 ```java
 	...
 
