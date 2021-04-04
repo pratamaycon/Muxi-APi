@@ -1,5 +1,6 @@
 package com.pratamaycon.muxi.domain.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -18,8 +19,10 @@ public class Terminal {
 	@Id
 	private Integer logic;
 
+	@Column(nullable = false)
 	private String serial;
 
+	@Column(nullable = false)
 	private String model;
 
 	private Integer sam;
@@ -28,6 +31,7 @@ public class Terminal {
 
 	private Integer plat;
 
+	@Column(nullable = false)
 	private String version;
 
 	private Integer mxr;
