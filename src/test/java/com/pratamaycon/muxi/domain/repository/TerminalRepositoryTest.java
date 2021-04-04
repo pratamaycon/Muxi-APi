@@ -24,7 +24,7 @@ public class TerminalRepositoryTest {
     @Test
 	public void deveEncontrarUmTerminalPorLogic() {
     	//cenario
-    	Integer logic = 46332211;
+    	Integer logic = 44332211;
     	
 		//acao
 		Optional<Terminal> terminalOp = repository.findByLogic(logic);

@@ -41,7 +41,7 @@ public class TerminalServiceTest {
 		assertThat(savedTerminal).isNotNull();
 
 	}
-
+	
 	@Test
 	public void deveAtualizarrUmTerminal() {
 		Integer logic = 46332211;
